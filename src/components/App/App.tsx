@@ -1,5 +1,5 @@
 import React from 'react';
-import "./sass/main.scss";
+import "../../sass/main.scss";
 
 export const App = () => (
     <div className="App">
