@@ -1,9 +1,11 @@
 import React from 'react';
+import {Route, Routes} from 'react-router-dom';
+import {HomePage} from "../../pages/Home/Home.page";
 import "../../sass/main.scss";
 
 export const App = () => (
-    <div className="App">
-        <h2>hello world</h2>
-    </div>
+    <Routes>
+        <Route path='/' element={<HomePage/>}/>
+    </Routes>
 );
 
