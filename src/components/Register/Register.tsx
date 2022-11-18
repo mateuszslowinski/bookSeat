@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
 import {emailValidate, passwordValidate} from "../../constants/validate";
 import {emailErrorDesc, passwordErrorDesc} from "../../constants/description";
+import {api} from "../../utils/api";
 
 type RegisterFormType = {
     email: string
@@ -20,8 +21,20 @@ export const Register = () => {
         }
     });
 
-    const onSubmit = ({email, password}: RegisterFormType) => {
-        console.log(email, password, 'sign up')
+    const onSubmit = async ({email, password}: RegisterFormType) => {
+        try {
+            const res = await api.post(`/register`, ({email, password}), {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            },);
+            console.log(res)
+            if (res.status === 201) {
+                console.log('success')
+            }
+        } catch (error: any) {
+            console.log(error)
+        }
     }
     return (
         <div className='form_container'>
