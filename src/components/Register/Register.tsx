@@ -2,11 +2,8 @@ import {useForm} from "react-hook-form";
 import {emailValidate, passwordValidate} from "../../constants/validate";
 import {emailErrorDesc, passwordErrorDesc} from "../../constants/description";
 import {api} from "../../utils/api";
+import {UserLoginType} from 'types'
 
-type RegisterFormType = {
-    email: string
-    password: string
-}
 export const Register = () => {
     const {
         handleSubmit,
@@ -14,14 +11,14 @@ export const Register = () => {
         formState: {
             errors: {email, password},
         },
-    } = useForm<RegisterFormType>({
+    } = useForm<UserLoginType>({
         defaultValues: {
             email: '',
             password: ''
         }
     });
 
-    const onSubmit = async ({email, password}: RegisterFormType) => {
+    const onSubmit = async ({email, password}: UserLoginType) => {
         try {
             const res = await api.post(`/register`, ({email, password}), {
                 headers: {
