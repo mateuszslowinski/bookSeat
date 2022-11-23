@@ -17,6 +17,7 @@ export const Login = () => {
             onSubmit={onSubmit}
             btnText='Sign In'
             formSubtitle='Sign In to Book Seat'
+            login
         />
     )
 }
