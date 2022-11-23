@@ -1,0 +1,25 @@
+.page_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  padding: 5px 10px;
+  background: #8458B3;
+  color: $white;
+  margin:5px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  transition: transform .3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+}
