@@ -15,7 +15,6 @@ export const Map = () => {
                         <p>Name of restaurant</p>
                     </Popup>
                 </Marker>
-
             </MapContainer>
         </div>
     )
