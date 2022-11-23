@@ -3,14 +3,15 @@ import {emailValidate, passwordValidate} from "../../constants/validate";
 import {emailErrorDesc, passwordErrorDesc} from "../../constants/description";
 import {useForm} from "react-hook-form";
 import {UserLoginType} from 'types';
+import {NavLink} from "react-router-dom";
 
-interface Props{
-    onSubmit:any
-    btnText:string
-    formSubtitle:string
+interface Props {
+    onSubmit: any
+    btnText: string
+    formSubtitle: string
 }
 
-export const SignForm = ({onSubmit,btnText,formSubtitle}:Props) => {
+export const SignForm = ({onSubmit, btnText, formSubtitle}: Props) => {
     const {
         handleSubmit,
         register,
@@ -52,6 +53,7 @@ export const SignForm = ({onSubmit,btnText,formSubtitle}:Props) => {
                 />
                 <button>{btnText}</button>
             </form>
+            <NavLink to='/register'>Don't have an account? Create one</NavLink>
         </div>
     )
 }
