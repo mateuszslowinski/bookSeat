@@ -9,9 +9,10 @@ interface Props {
     onSubmit: any
     btnText: string
     formSubtitle: string
+    login?: boolean
 }
 
-export const SignForm = ({onSubmit, btnText, formSubtitle}: Props) => {
+export const SignForm = ({onSubmit, btnText, formSubtitle, login}: Props) => {
     const {
         handleSubmit,
         register,
@@ -53,7 +54,7 @@ export const SignForm = ({onSubmit, btnText, formSubtitle}: Props) => {
                 />
                 <button>{btnText}</button>
             </form>
-            <NavLink to='/register'>Don't have an account? Create one</NavLink>
+            {login ? <NavLink to='/register'>Don't have an account? Create one</NavLink> : null}
         </div>
     )
 }
