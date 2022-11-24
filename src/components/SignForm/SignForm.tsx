@@ -10,9 +10,10 @@ interface Props {
     btnText: string
     formSubtitle: string
     login?: boolean
+    errorMessage: string
 }
 
-export const SignForm = ({onSubmit, btnText, formSubtitle, login}: Props) => {
+export const SignForm = ({onSubmit, btnText, formSubtitle, login, errorMessage}: Props) => {
     const {
         handleSubmit,
         register,
@@ -52,6 +53,7 @@ export const SignForm = ({onSubmit, btnText, formSubtitle, login}: Props) => {
                     })} error={password}
                     placeholder="Password"
                 />
+                {errorMessage ? <p>{errorMessage}</p> : null}
                 <button>{btnText}</button>
             </form>
             {login ? <NavLink to='/register'>Don't have an account? Create one</NavLink> : null}
