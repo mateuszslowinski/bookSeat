@@ -1,0 +1,22 @@
+.account_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+  text-align: center;
+  background-color: #e8f9fd ;
+  color: $black;
+  padding: 0 50px;
+  margin-top: 50px;
+
+  & h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  & p{
+    margin: 4px;
+    font-size: 1.6rem;
+  }
+
+}
