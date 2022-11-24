@@ -1,6 +1,8 @@
 import {Button} from "../common/Button/Button"
+import {useNavigate} from "react-router-dom";
 
 export const Account = () => {
+    const navigate = useNavigate();
     return (
         <div className='page_container'>
             <div className='account_container'>
@@ -15,7 +17,7 @@ export const Account = () => {
                 </div>
                 <div>
                     <p>Favorite places</p>
-                    <Button text='Edit'/>
+                    <Button text='Edit' onClick={() => navigate('edit')}/>
                 </div>
             </div>
         </div>
