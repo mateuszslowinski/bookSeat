@@ -11,14 +11,13 @@ export const userLogin: any = createAsyncThunk<CreatedUserType,
         try {
             const response = await api.post(`${process.env.REACT_APP_API_URL}/login`, {email, password})
             const data = await response.data
-
             if (response.status === 201) {
                 localStorage.setItem('userToken', data.token)
                 return data
             } else {
-                return rejectWithValue(data.message)
+                return rejectWithValue(data.response.data)
             }
         } catch (e: any) {
-            return rejectWithValue(e.response.data.message);
+            return rejectWithValue(e.response.data);
         }
     })
